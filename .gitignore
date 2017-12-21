@@ -1,0 +1,7 @@
+# Front
+contact_book_front/node_modules
+contact_book_front/public/styles/*
+
+# Back
+contact_book_back/vendor
+contact_book_back/composer.lock
