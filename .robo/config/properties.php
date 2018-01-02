@@ -6,9 +6,7 @@ $git_email     = exec('git config user.email');
 $project_slug  = 'contact_book';
 
 return [
-    // Project configuration
     'config' => [
-
         'DB_NAME' => [
             'question' => 'Database name',
             'default' => $unix_username . '_' . $project_slug,
@@ -42,6 +40,10 @@ return [
             'formater' => function ($value) {
                 return '/' . ltrim($value, '/');
             }
+        ],
+        'BASE_PATH' => [
+            'question' => 'Base path to index.html (with ending slash)',
+            'default' => '/'.$unix_username.'/'.$project_slug . '/'.$project_slug . '_front/public/',
         ],
     ]
 ];

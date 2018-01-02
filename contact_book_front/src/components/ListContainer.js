@@ -22,7 +22,7 @@ class ListContainer extends React.Component {
     }
 }
 
-ListContainer.PropTypes = {
+ListContainer.propTypes = {
     contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 

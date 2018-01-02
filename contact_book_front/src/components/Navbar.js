@@ -8,17 +8,17 @@ class Navbar extends React.Component {
                 <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <NavLink to = '/' exact className="nav-link" activeClassName="active">
+                            <NavLink to = {BASE_PATH + '/'} exact className="nav-link" activeClassName="active">
                                 Home
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to = '/list' className="nav-link" activeClassName="active">
+                            <NavLink to = {BASE_PATH + '/list'} className="nav-link" activeClassName="active">
                                 Contacts
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to = '/add' className="nav-link" activeClassName="active">
+                            <NavLink to = {BASE_PATH + '/add' } className="nav-link" activeClassName="active">
                                 Add contact
                             </NavLink>
                         </li>

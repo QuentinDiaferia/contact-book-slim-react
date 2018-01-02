@@ -1,7 +1,13 @@
+# Robo config
+.robo/config/*.config
+
 # Front
 contact_book_front/node_modules
-contact_book_front/public/styles/*
+contact_book_front/public
+contact_book_front/.env
+contact_book_front/.htaccess
 
 # Back
 contact_book_back/vendor
 contact_book_back/composer.lock
+contact_book_back/config/config.php

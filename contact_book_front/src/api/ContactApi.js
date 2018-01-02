@@ -9,7 +9,8 @@ import {
     editContact
 } from '../actions/ContactActions';
 
-const API_CONTACTS_URL = API_URL + 'contact/';
+const API_CONTACTS_URL = API_URL + 'contacts/';
+//const API_CONTACTS_URL = 'http://localhost/dev-local/contact_book/contact_book_back/public/contacts/';
 
 export default class ContactApi {
 

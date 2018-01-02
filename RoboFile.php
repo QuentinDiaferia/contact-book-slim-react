@@ -23,6 +23,8 @@ class RoboFile extends \Globalis\Robo\Tasks
         $this->loadConfig();
         $this->buildBackApp();
         $this->buildFrontApp();
+        $this->installBackDependencies();
+        $this->installFrontDependencies();
     }
 
     /**
@@ -37,6 +39,17 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->run()
             ->getData();
         $this->install();
+    }
+
+    /**
+     * Start watching on asset and source files
+     */
+    public function watch()
+    {
+        $this->loadConfig();
+        $this->taskExec($this->configVariables['NPM_PATH'].' run watch')
+            ->dir($this->frontAppPath)
+            ->run();
     }
 
     private function buildBackApp()
@@ -60,6 +73,21 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->endDelimiter('##>')
             ->dirPermissions(0755)
             ->filePermissions(0644)
+            ->run();
+    }
+
+    private function installBackDependencies()
+    {
+        $this->taskComposerInstall()
+            ->workingDir($this->backAppPath)
+            ->preferDist()
+            ->run();
+    }
+
+    private function installFrontDependencies()
+    {
+        $this->taskNpmInstall($this->configVariables['NPM_PATH'])
+            ->dir($this->frontAppPath)
             ->run();
     }
 
