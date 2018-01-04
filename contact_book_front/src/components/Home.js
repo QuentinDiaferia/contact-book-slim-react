@@ -1,13 +1,14 @@
-import React from 'react';
+import React from 'react'
+import Language from '../services/Language'
 
 class Home extends React.Component {
     render() {
         return (
             <div className="Container">
-                Home
+                {Language.get('home', 'title-home')}
             </div>
-        );
+        )
     }
 }
 
-export default Home;
+export default Home

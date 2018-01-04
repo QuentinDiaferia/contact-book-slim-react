@@ -1,24 +1,24 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
 
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import ContactApi from '../api/ContactApi';
-import List from './List';
+import ContactApi from '../api/ContactApi'
+import List from './List'
 
 
 class ListContainer extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
         if (this.props.contacts.length === 0) {
-            ContactApi.getContacts();
+            ContactApi.getContacts()
         }
     }
 
     render() {
         return (
             <List elements = {this.props.contacts} />
-        );
+        )
     }
 }
 
@@ -32,4 +32,4 @@ const mapStateToProps = store => {
     }
 }
 
-export default connect(mapStateToProps)(ListContainer);
+export default connect(mapStateToProps)(ListContainer)

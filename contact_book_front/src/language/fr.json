@@ -1,0 +1,22 @@
+{
+    "general": {
+        "action-submit": "Envoyer",
+        "action-delete": "Supprimer",
+        "action-edit": "Editer"
+    },
+    "navigation": {
+        "tab-home": "Accueil",
+        "tab-contacts": "Contacts",
+        "tab-add-contact": "Ajouter un contact"
+    },
+    "home": {
+        "title-home": "Accueil"
+    },
+    "contacts": {
+        "title-contact": "Contact",
+        "title-add-contact": "Ajouter un contact",
+        "title-edit-contact": "Editer le contact",
+        "label-name": "Nom",
+        "label-phone": "Téléphone"
+    }
+}

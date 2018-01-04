@@ -1,14 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Language from '../services/Language'
 
 function Form(props) {
-    let title = 'Add contact',
+    let title = Language.get('contacts', 'title-add-contacts'),
         defaultName = '',
-        defaultPhone = '';
+        defaultPhone = ''
     if (props.defaultValue) {
-        title = 'Edit contact';
-        defaultName = props.defaultValue.name;
-        defaultPhone = props.defaultValue.phone;
+        title = Language.get('contacts', 'title-edit-contacts')
+        defaultName = props.defaultValue.name
+        defaultPhone = props.defaultValue.phone
     }
     return (
         <form
@@ -26,7 +27,7 @@ function Form(props) {
 
                 <div className="form-group">
 
-                    <label>Name</label>
+                    <label>{Language.get('contacts', 'label-name')}</label>
                     <input
                         name = "name"
                         onChange = {props.onChange}
@@ -34,7 +35,7 @@ function Form(props) {
                         className = "form-control"
                     />
 
-                    <label>Phone</label>
+                    <label>{Language.get('contacts', 'label-phone')}</label>
                     <input
                         name = "phone"
                         onChange = {props.onChange}
@@ -45,12 +46,12 @@ function Form(props) {
                 </div>
 
                 <button className = "btn btn-secondary">
-                    Submit
+                    {Language.get('general', 'action-submit')}
                 </button>
 
             </fieldset>
         </form>
-    );
+    )
 }
 
 Form.propTypes = {
@@ -60,4 +61,4 @@ Form.propTypes = {
     message: PropTypes.string,
 }
 
-export default Form;
+export default Form

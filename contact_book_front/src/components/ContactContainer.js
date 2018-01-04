@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
 
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
-import ContactApi from '../api/ContactApi';
-import Flash from '../services/Flash';
-import Contact from './Contact';
+import ContactApi from '../api/ContactApi'
+import Flash from '../services/Flash'
+import Contact from './Contact'
 
 
 class ContactContainer extends React.Component {
@@ -35,14 +35,14 @@ class ContactContainer extends React.Component {
         if (this.state.redirect) {
             return (
                 <Redirect to = {BASE_PATH + '/list'} />
-            );
+            )
         } else {
             return (
                 <Contact
                     contact = {this.props.contact}
                     onDelete = {this.onDelete}
                 />
-            );
+            )
         }
     }
 }
@@ -57,4 +57,4 @@ const mapStateToProps = store => {
     }
 }
 
-export default connect(mapStateToProps)(ContactContainer);
+export default connect(mapStateToProps)(ContactContainer)

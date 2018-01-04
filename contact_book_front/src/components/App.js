@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom'
 
-import Navbar from './Navbar';
-import FlashData from './FlashData';
-import Home from './Home';
-import ListContainer from './ListContainer';
-import ContactContainer from './ContactContainer';
-import FormContainer from './FormContainer';
-import FormEditContainer from './FormEditContainer';
+import Navbar from './Navbar'
+import FlashData from './FlashData'
+import Home from './Home'
+import ListContainer from './ListContainer'
+import ContactContainer from './ContactContainer'
+import FormContainer from './FormContainer'
+import FormEditContainer from './FormEditContainer'
 
 class App extends React.Component {
     render() {
@@ -24,8 +24,8 @@ class App extends React.Component {
                     <Route path = {BASE_PATH + '/edit/:id'} component = {FormEditContainer} />
                 </Switch>
             </div>
-        );
+        )
     }
 }
 
-export default App;
+export default App
