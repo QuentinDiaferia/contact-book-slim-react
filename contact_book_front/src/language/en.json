@@ -1,0 +1,22 @@
+{
+    "general": {
+        "action-submit": "Submit",
+        "action-delete": "Delete",
+        "action-edit": "Edit"
+    },
+    "navigation": {
+        "tab-home": "Home",
+        "tab-contacts": "Contacts",
+        "tab-add-contact": "Add contact"
+    },
+    "home": {
+        "title-home": "Home"
+    },
+    "contacts": {
+        "title-contact": "Contact",
+        "title-add-contact": "Add contact",
+        "title-edit-contact": "Edit contact",
+        "label-name": "Name",
+        "label-phone": "Phone"
+    }
+}

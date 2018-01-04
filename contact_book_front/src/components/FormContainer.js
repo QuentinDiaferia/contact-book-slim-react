@@ -1,51 +1,51 @@
-import React from 'react';
+import React from 'react'
 
-import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 
-import ContactApi from '../api/ContactApi';
-import Flash from '../services/Flash';
+import ContactApi from '../api/ContactApi'
+import Flash from '../services/Flash'
 
-import Form from './Form';
+import Form from './Form'
 
 
 class FormContainer extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             name: '',
             phone: '',
             message: '',
             redirect: false
-        };
+        }
         
-        this.onFormChange = this.onFormChange.bind(this);
-        this.onFormSubmit = this.onFormSubmit.bind(this);
+        this.onFormChange = this.onFormChange.bind(this)
+        this.onFormSubmit = this.onFormSubmit.bind(this)
     }
 
     onFormChange(e) {
-        const name = e.target.name;
-        const value = e.target.value;
+        const name = e.target.name
+        const value = e.target.value
         this.setState({
             [name]: value
-        });
+        })
     }
 
     onFormSubmit(e) {
-        e.preventDefault();
+        e.preventDefault()
         if (this.state.name === '' || this.state.phone === '') {
-            this.setState({message: 'Both fields are required.'});
+            this.setState({message: 'Both fields are required.'})
         } else {
-            e.target.reset();
+            e.target.reset()
             this.setState({
                 message: '',
                 redirect: true
-            });
+            })
             ContactApi.addContact({
                 name: this.state.name,
                 phone: this.state.phone
-            });
-            Flash.add('Contact added', 'success');
+            })
+            Flash.add('Contact added', 'success')
         }
     }
 
@@ -61,9 +61,9 @@ class FormContainer extends React.Component {
                     onSubmit = {this.onFormSubmit}
                     message = {this.state.message}
                 />
-            );
+            )
         }
     }
 }
 
-export default FormContainer;
+export default FormContainer

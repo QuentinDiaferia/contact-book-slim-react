@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import Flash from '../services/Flash';
+import Flash from '../services/Flash'
 
 function FlashData(props) {
     if (props.flashData.message) {
@@ -38,4 +38,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FlashData);
+export default connect(mapStateToProps, mapDispatchToProps)(FlashData)

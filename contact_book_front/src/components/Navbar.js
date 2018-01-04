@@ -1,5 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import Language from '../services/Language'
 
 class Navbar extends React.Component {
     render() {
@@ -9,24 +10,24 @@ class Navbar extends React.Component {
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <NavLink to = {BASE_PATH + '/'} exact className="nav-link" activeClassName="active">
-                                Home
+                                {Language.get('navigation', 'tab-home')}
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to = {BASE_PATH + '/list'} className="nav-link" activeClassName="active">
-                                Contacts
+                                {Language.get('navigation', 'tab-contacts')}
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to = {BASE_PATH + '/add' } className="nav-link" activeClassName="active">
-                                Add contact
+                                {Language.get('navigation', 'tab-add-contact')}
                             </NavLink>
                         </li>
                     </ul>
                 </nav>
             </header>
-        );
+        )
     }
 }
 
-export default Navbar;
+export default Navbar
