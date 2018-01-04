@@ -9,6 +9,5 @@ $container['db'] = function ($container) {
     $capsule->setAsGlobal();
     $capsule->bootEloquent();
     return $capsule;
-}
+};
 
-?>
