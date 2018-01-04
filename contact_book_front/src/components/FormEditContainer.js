@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import ContactApi from '../api/ContactApi';
-import FlashApi from '../api/FlashApi';
+import Flash from '../services/Flash';
 
 import Form from './Form';
 
@@ -53,7 +53,7 @@ class FormEditContainer extends React.Component {
                 name: this.state.name,
                 phone: this.state.phone
             });
-            FlashApi.add('Contact edited', 'success');
+            Flash.add('Contact edited', 'success');
         }
     }
 
@@ -75,7 +75,7 @@ class FormEditContainer extends React.Component {
     }
 }
 
-FormEditContainer.PropTypes = {
+FormEditContainer.propTypes = {
     contact: PropTypes.object.isRequired,
 }
 

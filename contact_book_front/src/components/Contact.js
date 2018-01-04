@@ -49,7 +49,7 @@ function Contact(props) {
     );
 }
 
-Contact.PropTypes = {
+Contact.propTypes = {
     contact: PropTypes.object.isRequired,
     onDelete: PropTypes.func.isRequired,
 }

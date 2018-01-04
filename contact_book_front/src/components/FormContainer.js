@@ -3,7 +3,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 import ContactApi from '../api/ContactApi';
-import FlashApi from '../api/FlashApi';
+import Flash from '../services/Flash';
 
 import Form from './Form';
 
@@ -45,7 +45,7 @@ class FormContainer extends React.Component {
                 name: this.state.name,
                 phone: this.state.phone
             });
-            FlashApi.add('Contact added', 'success');
+            Flash.add('Contact added', 'success');
         }
     }
 

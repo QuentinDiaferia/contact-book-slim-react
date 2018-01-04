@@ -2,7 +2,7 @@ import store from '../store';
 
 import { addFlashData, emptyFlashData } from '../actions/FlashActions';
 
-export default class FlashApi {
+export default class Flash {
 
     static add(message, type) {
         store.dispatch(addFlashData(message, type));
@@ -12,4 +12,3 @@ export default class FlashApi {
         store.dispatch(emptyFlashData());
     }
 }
-
