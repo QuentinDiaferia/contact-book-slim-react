@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux';
 
-import FlashApi from '../api/FlashApi';
+import Flash from '../services/Flash';
 
 function FlashData(props) {
     if (props.flashData.message) {
@@ -34,7 +34,7 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        dismissAlert: () => FlashApi.empty()
+        dismissAlert: () => Flash.empty()
     }
 }
 

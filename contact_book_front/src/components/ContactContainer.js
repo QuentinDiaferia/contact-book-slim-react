@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import ContactApi from '../api/ContactApi';
-import FlashApi from '../api/FlashApi';
+import Flash from '../services/Flash';
 import Contact from './Contact';
 
 
@@ -28,7 +28,7 @@ class ContactContainer extends React.Component {
     onDelete() {
         ContactApi.deleteContact(this.props.contact.id);
         this.setState({redirect: true});
-        FlashApi.add('Contact deleted', 'success');
+        Flash.add('Contact deleted', 'success');
     }
 
     render() {
@@ -47,7 +47,7 @@ class ContactContainer extends React.Component {
     }
 }
 
-Contact.PropTypes = {
+Contact.propTypes = {
     contact: PropTypes.object.isRequired,
 }
 
