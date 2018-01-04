@@ -52,6 +52,50 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->run();
     }
 
+    /**
+     * Create migration
+     *
+     * @param string $name Migration name (CamelCase)
+     */
+    public function migrateCreate($name)
+    {
+        $name = explode(' ', str_replace(['_', '-'], ' ', $name));
+        foreach ($name as &$word) {
+            $word = mb_strtoupper(mb_substr($word, 0, 1)) . mb_substr($word, 1);
+        }
+        $name = implode('', $name);
+
+        $this->taskExec('vendor/bin/phinx')
+            ->dir($this->backAppPath)
+            ->arg('create')
+            ->arg($name)
+            ->run();
+    }
+
+    /**
+     * Database migrate
+     */
+    public function migrateUp()
+    {
+        $this->taskExec('vendor/bin/phinx')
+            ->dir($this->backAppPath)
+            ->arg('migrate')
+            ->run();
+    }
+
+    /**
+     * Migration rollback
+     */
+    public function migrateDown()
+    {
+        $this->taskExec('vendor/bin/phinx')
+            ->dir($this->backAppPath)
+            ->arg('rollback')
+            ->run();
+    }
+
+
+
     private function buildBackApp()
     {
         $this->taskCopyReplaceDir([$this->buildDirectories['back'] => $this->backAppPath])
@@ -62,6 +106,7 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->dirPermissions(0755)
             ->filePermissions(0644)
             ->run();
+        $this->migrateUp();
     }
 
     private function buildFrontApp()

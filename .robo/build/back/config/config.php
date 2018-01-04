@@ -9,6 +9,7 @@ return [
             'username' => '<##DB_USER##>',
             'password' => '<##DB_PASSWORD##>',
             'database' => '<##DB_NAME##>',
+            'port' => '<##DB_PORT##>',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

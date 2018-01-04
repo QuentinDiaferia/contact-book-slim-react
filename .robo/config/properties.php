@@ -20,8 +20,12 @@ return [
             'default' => 'password',
         ],
         'DB_HOST' => [
-            'question' => 'Database Host',
+            'question' => 'Database host',
             'default' => 'localhost',
+        ],
+        'DB_PORT' => [
+            'question' => 'Database port',
+            'default' => 3306,
         ],
 
         'WEB_SCHEME' => [

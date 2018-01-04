@@ -10,4 +10,5 @@ contact_book_front/.htaccess
 # Back
 contact_book_back/vendor
 contact_book_back/composer.lock
+contact_book_back/phinx.php
 contact_book_back/config/config.php
