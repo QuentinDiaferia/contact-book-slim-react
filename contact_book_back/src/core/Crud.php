@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace App\Core;
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
@@ -7,7 +7,7 @@ use Interop\Container\ContainerInterface;
 use Slim\Exception\NotFoundException;
 
 // @TODO error handling, validation
-abstract class Base
+abstract class Crud extends Base
 {
     protected $request;
     protected $response;
@@ -20,10 +20,6 @@ abstract class Base
     abstract protected function prepareReturnData($data);
 
     abstract protected function save($entity, $data);
-
-    public function __construct(ContainerInterface $container) {
-        $this->db = $container->get('db');
-    }
 
     public function __invoke(Request $request, Response $response, $args) : Response
     {
