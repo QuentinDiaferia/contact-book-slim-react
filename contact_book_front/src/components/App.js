@@ -1,14 +1,16 @@
 import React from 'react'
 
 import { Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-import Navbar from './Navbar'
-import FlashData from './FlashData'
-import Home from './Home'
-import ListContainer from './ListContainer'
-import ContactContainer from './ContactContainer'
-import FormContainer from './FormContainer'
-import FormEditContainer from './FormEditContainer'
+import Navbar from 'components/Navbar'
+import FlashData from 'components/FlashData'
+import Home from 'components/Home'
+import LoginPage from 'components/login/LoginPage'
+import ListContainer from 'components/contacts/ListContainer'
+import ContactContainer from 'components/contacts/ContactContainer'
+import FormContainer from 'components/contacts/FormContainer'
+import FormEditContainer from 'components/contacts/FormEditContainer'
 
 class App extends React.Component {
     render() {

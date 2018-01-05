@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux'
 
-import contactReducer from './contactReducer'
-import flashReducer from './flashReducer'
-import languageReducer from './languageReducer'
+import ContactReducer from 'reducers/ContactReducer'
+import FlashReducer from 'reducers/FlashReducer'
+import LanguageReducer from 'reducers/LanguageReducer'
+import SessionReducer from 'reducers/SessionReducer'
 
 var reducers = combineReducers({
-    contactsState: contactReducer,
-    flashData: flashReducer,
-    language: languageReducer,
+    contactsState: ContactReducer,
+    flashData: FlashReducer,
+    language: LanguageReducer,
+    session: SessionReducer,
 })
 
 export default reducers

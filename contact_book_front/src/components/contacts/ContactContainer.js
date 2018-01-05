@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
-import ContactApi from '../api/ContactApi'
-import Flash from '../services/Flash'
-import Contact from './Contact'
+import ContactApi from 'api/ContactApi'
+import Flash from 'services/Flash'
+import Contact from 'components/contacts/Contact'
 
 
 class ContactContainer extends React.Component {
