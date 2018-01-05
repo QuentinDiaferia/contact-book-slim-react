@@ -7,12 +7,14 @@ const API_AUTH_URL = API_URL + 'authentication/'
 
 export default class SessionApi {
 
-    static login() {
-        return axios.get(API_AUTH_URL)
-            .then(response => {
-                store.dispatch(login(response.data))
-                return response.data
-            });
+    static login(email, password) {
+        return axios.post(API_AUTH_URL + 'login/', {
+            email,
+            password
+        }).then(response => {
+            store.dispatch(login(response.data))
+            return response.data
+        });
     }
 }
 

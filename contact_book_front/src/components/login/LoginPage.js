@@ -13,7 +13,7 @@ class LoginPage extends React.Component {
     }
 
     login(data) {
-        
+        SessionApi.login(data.email, data.password)
     }
 
     render() {
