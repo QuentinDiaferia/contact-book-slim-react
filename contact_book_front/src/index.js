@@ -6,14 +6,14 @@ import { BrowserRouter } from 'react-router-dom'
 import store from 'store'
 import Language from 'services/Language'
 
-import App from 'components/App'
+import RouterApp from 'components/RouterApp'
 
 Language.load('en')
 
 ReactDOM.render(
     <Provider store = {store}>
         <BrowserRouter>
-            <App />
+            <RouterApp />
         </BrowserRouter>
     </Provider>,
     document.getElementById('root')
