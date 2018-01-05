@@ -20,7 +20,7 @@ class LoginPage extends React.Component {
         return (
             <div className="Login card">
                 <div className="card-block">
-                    <h3 className="card-title">Login</h3>
+                    <h3 className="card-title">{Language.get('login', 'title-login')}</h3>
                     <LoginForm
                         onSubmit={this.login}
                     />

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import store from 'store'
 
-import { login } from 'actions/SessionActions'
+import { loginSuccess, loginFailure } from 'actions/SessionActions'
 
 const API_AUTH_URL = API_URL + 'authentication/'
 
@@ -12,9 +12,11 @@ export default class SessionApi {
             email,
             password
         }).then(response => {
-            store.dispatch(login(response.data))
+            store.dispatch(loginSuccess(response.data))
             return response.data
+        }, error => {
+            store.dispatch(loginFailure(error.response.data))
+            return error.response.data
         });
     }
 }
-

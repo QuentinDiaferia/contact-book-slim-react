@@ -2,7 +2,14 @@
     "general": {
         "action-submit": "Submit",
         "action-delete": "Delete",
-        "action-edit": "Edit"
+        "action-edit": "Edit",
+        "error-required": "This field is required"
+    },
+    "login": {
+        "title-login": "Login",
+        "label-email": "Email",
+        "label-password": "Password",
+        "error-auth": "Authentication error"
     },
     "navigation": {
         "tab-home": "Home",

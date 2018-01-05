@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Language from 'services/Language'
 
 class LoginForm extends React.Component {
@@ -21,10 +22,10 @@ class LoginForm extends React.Component {
     getFormErrors() {
         const formErrors = {}
         if (this.state.formData.email === '') {
-            formErrors.email = 'Le champ email est requis.'
+            formErrors.email = Language.get('general', 'error-required')
         }
         if (this.state.formData.password === '') {
-            formErrors.password = 'Le champ password est requis.'
+            formErrors.password = Language.get('general', 'error-required')
         }
         this.setState({formErrors})
         return formErrors
@@ -45,14 +46,17 @@ class LoginForm extends React.Component {
     render() {
         return (
             <form onSubmit={event => event.preventDefault()}>
+                {this.props.session.error ? (
+                    <p>{Language.get('login', 'error-auth')}</p>
+                ) : null}
                 <div className="form-group">
-                    <input type="text" name="email" className="form-control" placeholder="Email" onChange={this.onChange} />
+                    <input type="text" name="email" className="form-control" placeholder={Language.get('login', 'label-email')} onChange={this.onChange} />
                     {this.state.formErrors.email ? (
                         <p>{this.state.formErrors.email}</p>
                     ) : null}
                 </div>
                 <div className="form-group">
-                    <input type="password" name="password" className="form-control" placeholder="Password" onChange={this.onChange} />
+                    <input type="password" name="password" className="form-control" placeholder={Language.get('login', 'label-password')} onChange={this.onChange} />
                     {this.state.formErrors.password ? (
                         <p>{this.state.formErrors.password}</p>
                     ) : null}
@@ -63,4 +67,10 @@ class LoginForm extends React.Component {
     }
 }
 
-export default LoginForm
+const mapStateToProps = store => {
+    return {
+        session: store.session
+    }
+}
+
+export default connect(mapStateToProps)(LoginForm)

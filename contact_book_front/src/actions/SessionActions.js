@@ -1,6 +1,13 @@
-export function login(data) {
+export function loginSuccess(data) {
     return {
-        type: 'LOGIN',
+        type: 'LOGIN_SUCCESS',
+        data
+    }
+}
+
+export function loginFailure(data) {
+    return {
+        type: 'LOGIN_FAILURE',
         data
     }
 }
