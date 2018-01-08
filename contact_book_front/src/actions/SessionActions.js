@@ -11,3 +11,9 @@ export function loginFailure(data) {
         data
     }
 }
+
+export function logout() {
+    return {
+        type: 'LOGOUT'
+    }
+}

@@ -5,13 +5,22 @@ import FlashData from 'components/FlashData'
 import Navbar from 'components/Navbar'
 import LoginPage from 'components/login/LoginPage'
 
+import SessionApi from 'api/SessionApi'
+
 class App extends React.Component {
+    logout(event) {
+        event.preventDefault()
+        SessionApi.logout()
+    }
+
     render() {
         return (
-            !this.props.session.user ? (
+            this.props.session.loggedIn ? (
                 <div>
                     <FlashData />
-                    <Navbar />
+                    <Navbar
+                        logout = {this.logout}
+                    />
                     {this.props.children}
                 </div>
             ) : (

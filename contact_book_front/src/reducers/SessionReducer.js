@@ -1,4 +1,5 @@
 const initialState = {
+    loggedIn: false,
     user: {},
     error: false,
 }
@@ -8,21 +9,24 @@ const SessionReducer = function(state = initialState, action) {
 
         case 'LOGIN_SUCCESS':
             return {
+                loggedIn: true,
                 user: {
-                    id: 'id',
-                    email: 'email',
+                    id: action.data.id,
+                    email: action.data.email,
                 },
                 error: false,
             }
 
         case 'LOGIN_FAILURE':
             return {
+                loggedIn: false,
                 user: {},
                 error: true,
             }
 
         case 'LOGOUT':
             return {
+                loggedIn: false,
                 user: {},
                 error: false,
             }

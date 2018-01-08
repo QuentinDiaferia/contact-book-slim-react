@@ -11,11 +11,18 @@ class Authentication extends \App\Core\Base
     {
         $data = $request->getParsedBody();
         $user = User::where('email', $data['email'])->first();
+
         if (!$user || !password_verify($data['password'], $user->password)) {
             return $response->withStatus(422)->withJson([
                 'error' => 'Login error'
             ]);
         }
+
+        return $response->withJson([
+            'id' => $user->getKey(),
+            'email' => $user->email,
+        ]);
+
         return $response;
     }
 }

@@ -14,7 +14,8 @@
     "navigation": {
         "tab-home": "Accueil",
         "tab-contacts": "Contacts",
-        "tab-add-contact": "Ajouter un contact"
+        "tab-add-contact": "Ajouter un contact",
+        "tab-logout": "Déconnexion"
     },
     "home": {
         "title-home": "Accueil"
