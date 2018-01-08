@@ -94,6 +94,36 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->run();
     }
 
+    /**
+     * Create seed file
+     *
+     * @param string $name Seed name (CamelCase)
+     */
+    public function seedCreate($name)
+    {
+        $this->taskExec('vendor/bin/phinx')
+            ->dir($this->backAppPath)
+            ->arg('seed:create')
+            ->arg($name)
+            ->run();
+    }
+
+    /**
+     * Run seeds
+     *
+     * @param string $name Seed name (CamelCase)
+     */
+    public function seedRun($name = null)
+    {
+        $task = $this->taskExec('vendor/bin/phinx')
+            ->dir($this->backAppPath)
+            ->arg('seed:run');
+        if ($name) {
+            $task->option('-s ' . $name);
+        }
+        $task->run();
+    }
+
 
 
     private function buildBackApp()
