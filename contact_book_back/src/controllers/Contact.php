@@ -4,7 +4,7 @@ namespace App\Controller;
 use App\Model\Contact as ContactModel;
 
 // @TODO error handling, validation
-class Contact extends Base
+class Contact extends \App\Core\Crud
 {
     protected $modelClass = 'App\Model\Contact';
 

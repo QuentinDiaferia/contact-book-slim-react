@@ -11,6 +11,6 @@ require '../config/dependencies.php';
 
 require '../src/middlewares/cors.php';
 
-require '../src/routes/contacts.php';
+require '../src/routes/index.php';
 
 $app->run();

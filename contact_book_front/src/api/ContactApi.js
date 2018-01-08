@@ -1,5 +1,5 @@
-import axios from 'axios';
-import store from '../store';
+import axios from 'axios'
+import store from 'store'
 
 import {
     getContactsSuccess,
@@ -7,10 +7,9 @@ import {
     addContact,
     deleteContact,
     editContact
-} from '../actions/ContactActions';
+} from 'actions/ContactActions'
 
-const API_CONTACTS_URL = API_URL + 'contacts/';
-//const API_CONTACTS_URL = 'http://localhost/dev-local/contact_book/contact_book_back/public/contacts/';
+const API_CONTACTS_URL = API_URL + 'contacts/'
 
 export default class ContactApi {
 

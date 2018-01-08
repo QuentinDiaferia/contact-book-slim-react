@@ -1,31 +1,39 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-import { Switch, Route } from 'react-router-dom'
+import FlashData from 'components/FlashData'
+import Navbar from 'components/Navbar'
+import LoginPage from 'components/login/LoginPage'
 
-import Navbar from './Navbar'
-import FlashData from './FlashData'
-import Home from './Home'
-import ListContainer from './ListContainer'
-import ContactContainer from './ContactContainer'
-import FormContainer from './FormContainer'
-import FormEditContainer from './FormEditContainer'
+import SessionApi from 'api/SessionApi'
 
 class App extends React.Component {
+    logout(event) {
+        event.preventDefault()
+        SessionApi.logout()
+    }
+
     render() {
         return (
-            <div>
-                <FlashData />
-                <Navbar />
-                <Switch>
-                    <Route exact path = {BASE_PATH + '/'} component = {Home} />
-                    <Route path = {BASE_PATH + '/list'} component = {ListContainer} />
-                    <Route path = {BASE_PATH + '/contact/:id'} component = {ContactContainer} />
-                    <Route path = {BASE_PATH + '/add'} component = {FormContainer} />
-                    <Route path = {BASE_PATH + '/edit/:id'} component = {FormEditContainer} />
-                </Switch>
-            </div>
+            this.props.session.loggedIn ? (
+                <div>
+                    <FlashData />
+                    <Navbar
+                        logout = {this.logout}
+                    />
+                    {this.props.children}
+                </div>
+            ) : (
+                <LoginPage />
+            )
         )
     }
 }
 
-export default App
+const mapStateToProps = store => {
+    return {
+        session: store.session
+    }
+}
+
+export default connect(mapStateToProps)(App)

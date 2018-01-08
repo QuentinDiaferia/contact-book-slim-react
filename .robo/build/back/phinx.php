@@ -3,6 +3,7 @@
 return [
     'paths' => [
         'migrations' => 'migrations',
+        'seeds' => 'seeds',
     ],
     'environments' => [
         'default_migration_table' => 'phinxlog',
