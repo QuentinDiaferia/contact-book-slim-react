@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 
 import ContactApi from 'api/ContactApi'
 import Flash from 'services/Flash'
@@ -57,4 +57,4 @@ const mapStateToProps = store => {
     }
 }
 
-export default connect(mapStateToProps)(ContactContainer)
+export default withRouter(connect(mapStateToProps)(ContactContainer))
