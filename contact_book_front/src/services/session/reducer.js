@@ -1,13 +1,30 @@
 const initialState = {
-    loggedIn: false,
-    user: {},
+    loggedIn: isLoggedIn(),
+    user: getSessionUser(),
     error: false,
+}
+
+function isLoggedIn() {
+    return Boolean(getSessionUser())
+}
+
+function getSessionUser() {
+    return JSON.parse(localStorage.getItem('session_user'))
+}
+
+function setSession(data) {
+    localStorage.setItem('session_user', JSON.stringify(data))
+}
+
+function deleteSession() {
+    localStorage.removeItem('session_user')
 }
 
 export default function(state = initialState, action) {
     switch (action.type) {
 
         case 'LOGIN_SUCCESS':
+            setSession(action.data)
             return {
                 loggedIn: true,
                 user: {
@@ -25,6 +42,7 @@ export default function(state = initialState, action) {
             }
 
         case 'LOGOUT':
+            deleteSession()
             return {
                 loggedIn: false,
                 user: {},
