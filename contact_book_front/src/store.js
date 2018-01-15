@@ -3,7 +3,7 @@ import { createStore, combineReducers } from 'redux'
 import ContactReducer from 'reducers/ContactReducer'
 import FlashReducer from 'services/flash/reducer'
 import LanguageReducer from 'services/language/reducer'
-import SessionReducer from 'reducers/SessionReducer'
+import SessionReducer from 'services/session/reducer'
 
 var reducers = combineReducers({
     contactsState: ContactReducer,
