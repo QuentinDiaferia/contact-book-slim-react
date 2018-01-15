@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from 'redux'
 
-import ContactReducer from 'reducers/ContactReducer'
+import ContactReducer from 'services/contacts/reducer'
 import FlashReducer from 'services/flash/reducer'
 import LanguageReducer from 'services/language/reducer'
 import SessionReducer from 'services/session/reducer'

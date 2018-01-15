@@ -3,7 +3,7 @@ const initialState = {
     currentContact: {}
 }
 
-const ContactReducer = function(state = initialState, action) {
+export default function(state = initialState, action) {
     switch (action.type) {
 
         case 'GET_CONTACTS_SUCCESS':
@@ -47,5 +47,3 @@ const ContactReducer = function(state = initialState, action) {
             return state
     }
 }
-
-export default ContactReducer

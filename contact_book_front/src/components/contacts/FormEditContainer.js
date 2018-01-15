@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Redirect, withRouter } from 'react-router-dom'
 
-import ContactApi from 'api/ContactApi'
+import ContactApi from 'services/contacts/actions'
 import Flash from 'services/flash/actions'
 
 import Form from 'components/contacts/Form'
