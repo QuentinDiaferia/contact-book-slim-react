@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
 import store from 'store'
-import Language from 'services/Language'
+import Language from 'services/language/actions'
 
 import RouterApp from 'components/RouterApp'
 

@@ -1,8 +1,8 @@
-import store from '../store'
+import store from 'store'
 
 class Language {
     static load(lang) {
-        const language = require('../language/' + lang + '.json')
+        const language = require('language/' + lang + '.json')
         store.dispatch({
             type: 'LOAD_LANGUAGE',
             language
