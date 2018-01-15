@@ -3,7 +3,7 @@ const initialState = {
     type: null,
 }
 
-const FlashReducer = function(state = initialState, action) {
+export default function(state = initialState, action) {
     switch (action.type) {
 
         case 'ADD_FLASH':
@@ -19,5 +19,3 @@ const FlashReducer = function(state = initialState, action) {
             return state
     }
 }
-
-export default FlashReducer

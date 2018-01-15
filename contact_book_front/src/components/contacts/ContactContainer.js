@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { Redirect, withRouter } from 'react-router-dom'
 
 import ContactApi from 'api/ContactApi'
-import Flash from 'services/Flash'
+import Flash from 'services/flash/actions'
 import Contact from 'components/contacts/Contact'
 
 

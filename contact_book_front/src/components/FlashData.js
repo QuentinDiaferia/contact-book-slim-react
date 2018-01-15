@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
 
-import Flash from '../services/Flash'
+import Flash from 'services/flash/actions'
 
 function FlashData(props) {
     if (props.flashData.message) {
