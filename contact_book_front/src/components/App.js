@@ -5,12 +5,12 @@ import FlashData from 'components/FlashData'
 import Navbar from 'components/Navbar'
 import LoginPage from 'components/login/LoginPage'
 
-import SessionApi from 'api/SessionApi'
+import Session from 'services/session/actions'
 
 class App extends React.Component {
     logout(event) {
         event.preventDefault()
-        SessionApi.logout()
+        Session.logout()
     }
 
     render() {

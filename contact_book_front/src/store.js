@@ -1,5 +1,16 @@
-import { createStore } from 'redux';
-import reducers from './reducers';
+import { createStore, combineReducers } from 'redux'
+
+import ContactReducer from 'services/contacts/reducer'
+import FlashReducer from 'services/flash/reducer'
+import LanguageReducer from 'services/language/reducer'
+import SessionReducer from 'services/session/reducer'
+
+var reducers = combineReducers({
+    contactsState: ContactReducer,
+    flashData: FlashReducer,
+    language: LanguageReducer,
+    session: SessionReducer,
+})
 
 const store = createStore(reducers);
 

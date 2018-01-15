@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Redirect } from 'react-router-dom'
 
-import ContactApi from 'api/ContactApi'
-import Flash from 'services/Flash'
+import ContactApi from 'services/contacts/actions'
+import Flash from 'services/flash/actions'
 
 import Form from 'components/contacts/Form'
 

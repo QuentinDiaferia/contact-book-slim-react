@@ -1,56 +1,62 @@
 import axios from 'axios'
 import store from 'store'
 
-import {
-    getContactsSuccess,
-    getContactSuccess,
-    addContact,
-    deleteContact,
-    editContact
-} from 'actions/ContactActions'
-
 const API_CONTACTS_URL = API_URL + 'contacts/'
 
-export default class ContactApi {
+export default class Contact {
 
     static getContacts() {
         return axios.get(API_CONTACTS_URL)
             .then(response => {
-                store.dispatch(getContactsSuccess(response.data))
+                store.dispatch({
+                    type: 'GET_CONTACTS_SUCCESS',
+                    contacts: response.data
+                })
                 return response.data;
-            });
+            })
     }
 
     static getContact(id) {
         return axios.get(API_CONTACTS_URL + id)
             .then(response => {
-                store.dispatch(getContactSuccess(response.data))
+                store.dispatch({
+                    type: 'GET_CONTACT_SUCCESS',
+                    contact: response.data
+                })
                 return response.data;
-            });
+            })
     }
 
     static addContact(contact) {
         return axios.post(API_CONTACTS_URL, contact)
             .then(response => {
-                store.dispatch(addContact(response.data))
+                store.dispatch({
+                    type: 'ADD_CONTACT',
+                    contact: response.data
+                })
                 return response.data;
-            });
+            })
     }
 
     static deleteContact(id) {
         return axios.delete(API_CONTACTS_URL + id)
             .then(response => {
-                store.dispatch(deleteContact(id))
+                store.dispatch({
+                    type: 'DELETE_CONTACT',
+                    id
+                })
                 return response;
-            });
+            })
     }
 
     static editContact(contact) {
         return axios.put(API_CONTACTS_URL + contact.id, contact)
             .then(response => {
-                store.dispatch(editContact(response.data))
+                store.dispatch({
+                    type: 'EDIT_CONTACT',
+                    contact: response.data
+                })
                 return response.data;
-            });
+            })
     }
 }
-

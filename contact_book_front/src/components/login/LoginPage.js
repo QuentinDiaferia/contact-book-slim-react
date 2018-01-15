@@ -1,9 +1,9 @@
 import React from 'react'
-import Language from 'services/Language'
+import Language from 'services/language/actions'
 
 import LoginForm from 'components/login/LoginForm'
 
-import SessionApi from 'api/SessionApi'
+import Session from 'services/session/actions'
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class LoginPage extends React.Component {
     }
 
     login(data) {
-        SessionApi.login(data.email, data.password)
+        Session.login(data.email, data.password)
     }
 
     render() {

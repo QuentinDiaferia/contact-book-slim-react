@@ -2,7 +2,7 @@ const initialState = {
     language: null,
 }
 
-const LanguageReducer = function(state = initialState, action) {
+export default function(state = initialState, action) {
     switch (action.type) {
 
         case 'LOAD_LANGUAGE':
@@ -12,5 +12,3 @@ const LanguageReducer = function(state = initialState, action) {
             return state
     }
 }
-
-export default LanguageReducer
