@@ -21,7 +21,7 @@ export default class Session {
                 data: response.data
             })
             return error.response.data
-        });
+        })
     }
 
     static logout() {

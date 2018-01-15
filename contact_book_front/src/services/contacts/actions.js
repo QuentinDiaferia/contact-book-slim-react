@@ -3,7 +3,7 @@ import store from 'store'
 
 const API_CONTACTS_URL = API_URL + 'contacts/'
 
-export default class ContactApi {
+export default class Contact {
 
     static getContacts() {
         return axios.get(API_CONTACTS_URL)
@@ -13,7 +13,7 @@ export default class ContactApi {
                     contacts: response.data
                 })
                 return response.data;
-            });
+            })
     }
 
     static getContact(id) {
@@ -24,7 +24,7 @@ export default class ContactApi {
                     contact: response.data
                 })
                 return response.data;
-            });
+            })
     }
 
     static addContact(contact) {
@@ -35,17 +35,18 @@ export default class ContactApi {
                     contact: response.data
                 })
                 return response.data;
-            });
+            })
     }
 
     static deleteContact(id) {
         return axios.delete(API_CONTACTS_URL + id)
             .then(response => {
                 store.dispatch({
-                    type: 'DELETE_CONTACT'
+                    type: 'DELETE_CONTACT',
+                    id
                 })
                 return response;
-            });
+            })
     }
 
     static editContact(contact) {
@@ -56,6 +57,6 @@ export default class ContactApi {
                     contact: response.data
                 })
                 return response.data;
-            });
+            })
     }
 }

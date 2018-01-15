@@ -1,6 +1,6 @@
 import store from 'store'
 
-class Language {
+export default class Language {
     static load(lang) {
         const language = require('language/' + lang + '.json')
         store.dispatch({
@@ -13,5 +13,3 @@ class Language {
         return store.getState().language[section][key]
     }
 }
-
-export default Language
