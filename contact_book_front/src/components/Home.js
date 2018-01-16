@@ -1,5 +1,5 @@
 import React from 'react'
-import Language from 'services/language/actions'
+import Language from 'services/language'
 
 class Home extends React.Component {
     render() {

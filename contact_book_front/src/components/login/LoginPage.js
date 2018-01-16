@@ -1,9 +1,9 @@
 import React from 'react'
-import Language from 'services/language/actions'
+import Language from 'services/language'
 
 import LoginForm from 'components/login/LoginForm'
 
-import Session from 'services/session/actions'
+import Session from 'services/session'
 
 class LoginPage extends React.Component {
     constructor(props) {

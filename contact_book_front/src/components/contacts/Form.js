@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Language from 'services/language/actions'
+import Language from 'services/language'
 
 function Form(props) {
     let title = Language.get('contacts', 'title-add-contacts'),

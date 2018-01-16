@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
 
-import ContactApi from 'services/contacts/actions'
+import ContactApi from 'services/contacts'
 import List from 'components/contacts/List'
 
 

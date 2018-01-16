@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
-import ContactApi from 'services/contacts/actions'
-import Flash from 'services/flash/actions'
+import ContactApi from 'services/contacts'
+import Flash from 'services/flash'
 
 import Form from 'components/contacts/Form'
 

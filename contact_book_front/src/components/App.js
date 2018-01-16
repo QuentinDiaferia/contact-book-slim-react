@@ -6,7 +6,7 @@ import FlashData from 'components/FlashData'
 import Navbar from 'components/Navbar'
 import LoginPage from 'components/login/LoginPage'
 
-import Session from 'services/session/actions'
+import Session from 'services/session'
 
 class App extends React.Component {
     logout(event) {

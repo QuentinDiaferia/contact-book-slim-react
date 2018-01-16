@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
-import Language from 'services/language/actions'
+import Language from 'services/language'
 
 class Navbar extends React.Component {
     render() {
