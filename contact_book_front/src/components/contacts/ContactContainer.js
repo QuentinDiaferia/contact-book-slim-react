@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
-import { Redirect, withRouter } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import ContactApi from 'services/contacts/actions'
 import Flash from 'services/flash/actions'
@@ -11,24 +11,24 @@ import Contact from 'components/contacts/Contact'
 
 class ContactContainer extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             redirect: false
-        };
+        }
 
-        this.onDelete = this.onDelete.bind(this);
+        this.onDelete = this.onDelete.bind(this)
         
         ContactApi.getContact(this.props.match.params.id)
             .catch(error => {
-                this.setState({redirect: true});
-            });
+                this.setState({redirect: true})
+            })
     }
 
     onDelete() {
-        ContactApi.deleteContact(this.props.contact.id);
-        this.setState({redirect: true});
-        Flash.add('Contact deleted', 'success');
+        ContactApi.deleteContact(this.props.contact.id)
+        this.setState({redirect: true})
+        Flash.add('Contact deleted', 'success')
     }
 
     render() {
@@ -57,4 +57,4 @@ const mapStateToProps = store => {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(ContactContainer))
+export default connect(mapStateToProps)(ContactContainer)

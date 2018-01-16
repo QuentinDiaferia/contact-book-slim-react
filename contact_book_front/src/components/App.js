@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import FlashData from 'components/FlashData'
@@ -36,4 +37,4 @@ const mapStateToProps = store => {
     }
 }
 
-export default connect(mapStateToProps)(App)
+export default withRouter(connect(mapStateToProps)(App))
