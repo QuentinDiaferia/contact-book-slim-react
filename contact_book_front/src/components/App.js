@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import FlashData from 'components/FlashData'
 import Navbar from 'components/Navbar'
-import LoginPage from 'components/login/LoginPage'
+import LoginPage from 'components/login'
 
 import Session from 'services/session'
 
@@ -17,13 +17,13 @@ class App extends React.Component {
     render() {
         return (
             this.props.session.loggedIn ? (
-                <div>
+                <React.Fragment>
                     <FlashData />
                     <Navbar
                         logout = {this.logout}
                     />
                     {this.props.children}
-                </div>
+                </React.Fragment>
             ) : (
                 <LoginPage />
             )

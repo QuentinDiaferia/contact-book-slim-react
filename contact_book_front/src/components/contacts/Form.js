@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Language from 'services/language'
 
-function Form(props) {
+export default function Form(props) {
     let title = Language.get('contacts', 'title-add-contacts'),
         defaultName = '',
         defaultPhone = ''
@@ -60,5 +60,3 @@ Form.propTypes = {
     defaultValue: PropTypes.object,
     message: PropTypes.string,
 }
-
-export default Form

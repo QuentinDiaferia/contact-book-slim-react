@@ -1,7 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
 import ContactApi from 'services/contacts'
@@ -9,25 +7,19 @@ import Flash from 'services/flash'
 
 import Form from 'components/contacts/Form'
 
-
-class FormEditContainer extends React.Component {
+export default class FormContainer extends React.Component {
     constructor(props) {
         super(props)
-        
+
         this.state = {
-            name: this.props.contact.name,
-            phone: this.props.contact.phone,
+            name: '',
+            phone: '',
             message: '',
             redirect: false
         }
-
+        
         this.onFormChange = this.onFormChange.bind(this)
         this.onFormSubmit = this.onFormSubmit.bind(this)
-
-        ContactApi.getContact(this.props.match.params.id)
-            .catch(error => {
-                this.setState({redirect: true})
-            })
     }
 
     onFormChange(e) {
@@ -48,41 +40,27 @@ class FormEditContainer extends React.Component {
                 message: '',
                 redirect: true
             })
-            ContactApi.editContact({
-                id: this.props.contact.id,
+            ContactApi.addContact({
                 name: this.state.name,
                 phone: this.state.phone
             })
-            Flash.add('Contact edited', 'success')
+            Flash.add('Contact added', 'success')
         }
     }
 
     render() {
         if (this.state.redirect) {
             return (
-                <Redirect to = {BASE_PATH + '/list'} />
-            )
+                <Redirect to = {BASE_PATH + '/contacts/'} />
+            );
         } else {
             return (
                 <Form
                     onChange = {this.onFormChange}
                     onSubmit = {this.onFormSubmit}
                     message = {this.state.message}
-                    defaultValue = {this.props.contact}
                 />
             )
         }
     }
 }
-
-FormEditContainer.propTypes = {
-    contact: PropTypes.object.isRequired,
-}
-
-const mapStateToProps = store => {
-    return {
-        contact: store.contactsState.currentContact
-    }
-}
-
-export default connect(mapStateToProps)(FormEditContainer)

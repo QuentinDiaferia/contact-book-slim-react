@@ -16,9 +16,9 @@ function FlashData(props) {
                     </button>
                 </div>
             </div>
-        );
+        )
     } else {
-        return null;
+        return null
     }
 }
 

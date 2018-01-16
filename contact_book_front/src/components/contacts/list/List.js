@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 
 import { Link } from 'react-router-dom'
 
-function List(props) {
+export default function List(props) {
     const elements = []
     props.elements.forEach(element => {
         elements.push(
             <Link
                 className = "list-group-item"
                 key = {element.id} 
-                to = {'contact/' + element.id}
+                to = {BASE_PATH + '/contacts/view/' + element.id}
             >
                 {element.name}
             </Link>
@@ -26,5 +26,3 @@ function List(props) {
 List.propTypes = {
     elements: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
-
-export default List
