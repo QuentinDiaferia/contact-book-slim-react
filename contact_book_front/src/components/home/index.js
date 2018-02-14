@@ -1,7 +1,7 @@
 import React from 'react'
-import Language from 'services/language/actions'
+import Language from 'services/language'
 
-class Home extends React.Component {
+export default class Home extends React.Component {
     render() {
         return (
             <div className="Container">
@@ -10,5 +10,3 @@ class Home extends React.Component {
         )
     }
 }
-
-export default Home

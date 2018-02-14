@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 import store from 'store'
-import Language from 'services/language/actions'
+import Language from 'services/language'
 
 import RouterApp from 'components/RouterApp'
 

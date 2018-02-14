@@ -1,11 +1,11 @@
 import React from 'react'
-import Language from 'services/language/actions'
+import Language from 'services/language'
 
 import LoginForm from 'components/login/LoginForm'
 
-import Session from 'services/session/actions'
+import Session from 'services/session'
 
-class LoginPage extends React.Component {
+export default class Login extends React.Component {
     constructor(props) {
         super(props)
 
@@ -19,8 +19,8 @@ class LoginPage extends React.Component {
     render() {
         return (
             <div className="Login card">
-                <div className="card-block">
-                    <h3 className="card-title">{Language.get('login', 'title-login')}</h3>
+                <h3 className="card-header">{Language.get('login', 'title-login')}</h3>
+                <div className="card-body">
                     <LoginForm
                         onSubmit={this.login}
                     />
@@ -29,5 +29,3 @@ class LoginPage extends React.Component {
         )
     }
 }
-
-export default LoginPage

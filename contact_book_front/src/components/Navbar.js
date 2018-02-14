@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
-import Language from 'services/language/actions'
+import Language from 'services/language'
 
-class Navbar extends React.Component {
+export default class Navbar extends React.Component {
     render() {
         return (
             <header>
@@ -15,12 +15,12 @@ class Navbar extends React.Component {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to = {BASE_PATH + '/list'} className="nav-link" activeClassName="active">
+                            <NavLink to = {BASE_PATH + '/contacts/'} exact className="nav-link" activeClassName="active">
                                 {Language.get('navigation', 'tab-contacts')}
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to = {BASE_PATH + '/add' } className="nav-link" activeClassName="active">
+                            <NavLink to = {BASE_PATH + '/contacts/add' } className="nav-link" activeClassName="active">
                                 {Language.get('navigation', 'tab-add-contact')}
                             </NavLink>
                         </li>
@@ -41,5 +41,3 @@ class Navbar extends React.Component {
 Navbar.propTypes = {
     logout: PropTypes.func.isRequired,
 }
-
-export default Navbar

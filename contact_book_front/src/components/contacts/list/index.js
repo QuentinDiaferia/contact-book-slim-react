@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
 
-import ContactApi from 'services/contacts/actions'
-import List from 'components/contacts/List'
+import ContactApi from 'services/contacts'
+import List from 'components/contacts/list/List'
 
 
 class ListContainer extends React.Component {

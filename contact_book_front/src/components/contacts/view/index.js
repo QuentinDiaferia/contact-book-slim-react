@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
-import ContactApi from 'services/contacts/actions'
-import Flash from 'services/flash/actions'
-import Contact from 'components/contacts/Contact'
+import ContactApi from 'services/contacts'
+import Flash from 'services/flash'
+import Contact from 'components/contacts/view/Contact'
 
 
 class ContactContainer extends React.Component {
@@ -34,7 +34,7 @@ class ContactContainer extends React.Component {
     render() {
         if (this.state.redirect) {
             return (
-                <Redirect to = {BASE_PATH + '/list'} />
+                <Redirect to = {BASE_PATH + '/contacts/'} />
             )
         } else {
             return (

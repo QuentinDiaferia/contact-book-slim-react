@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-import Language from 'services/language/actions'
+import Language from 'services/language'
 
 import { Link } from 'react-router-dom'
 
-function Contact(props) {
+export default function Contact(props) {
     return (
         <div className="Container">
             <fieldset>
@@ -32,7 +32,7 @@ function Contact(props) {
                 </div>
 
                 <Link
-                    to = {'../edit/' + props.contact.id}
+                    to = {BASE_PATH + '/contacts/edit/' + props.contact.id}
                     className = "btn btn-secondary"
                 >
                     {Language.get('general', 'action-edit')}
@@ -54,5 +54,3 @@ Contact.propTypes = {
     contact: PropTypes.object.isRequired,
     onDelete: PropTypes.func.isRequired,
 }
-
-export default Contact

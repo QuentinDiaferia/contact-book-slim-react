@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Language from 'services/language/actions'
+import Language from 'services/language'
 
 class LoginForm extends React.Component {
     constructor(props) {

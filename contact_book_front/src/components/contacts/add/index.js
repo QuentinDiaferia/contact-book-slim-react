@@ -2,13 +2,12 @@ import React from 'react'
 
 import { Redirect } from 'react-router-dom'
 
-import ContactApi from 'services/contacts/actions'
-import Flash from 'services/flash/actions'
+import ContactApi from 'services/contacts'
+import Flash from 'services/flash'
 
 import Form from 'components/contacts/Form'
 
-
-class FormContainer extends React.Component {
+export default class FormContainer extends React.Component {
     constructor(props) {
         super(props)
 
@@ -52,7 +51,7 @@ class FormContainer extends React.Component {
     render() {
         if (this.state.redirect) {
             return (
-                <Redirect to = {BASE_PATH + '/list'} />
+                <Redirect to = {BASE_PATH + '/contacts/'} />
             );
         } else {
             return (
@@ -65,5 +64,3 @@ class FormContainer extends React.Component {
         }
     }
 }
-
-export default FormContainer

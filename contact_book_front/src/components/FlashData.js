@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
 
-import Flash from 'services/flash/actions'
+import Flash from 'services/flash'
 
 function FlashData(props) {
     if (props.flashData.message) {
@@ -16,9 +16,9 @@ function FlashData(props) {
                     </button>
                 </div>
             </div>
-        );
+        )
     } else {
-        return null;
+        return null
     }
 }
 
